@@ -1,0 +1,56 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.kanban'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+//    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    runtime 'com.h2database:h2'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // https://mvnrepository.com/artifact/org.kohsuke/github-api
+    compile group: 'org.kohsuke', name: 'github-api', version: '1.95'
+    // https://mvnrepository.com/artifact/org.kohsuke.metainf-services/metainf-services
+    compile group: 'org.kohsuke.metainf-services', name: 'metainf-services', version: '1.7'
+
+//    implementation 'com.squareup.okhttp3:okhttp:3.14.0'
+    compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '3.10.0'
+
+/*
+    <dependency>
+            <groupId>com.squareup.okhttp</groupId>
+      <artifactId>okhttp-urlconnection</artifactId>
+            <version>2.7.5</version>
+      <optional>true</optional>
+            </dependency>
+    <dependency>
+      <groupId>com.squareup.okhttp3</groupId>
+    <artifactId>okhttp-urlconnection</artifactId>
+      <version>3.9.0</version>
+            <optional>true</optional>
+    </dependency>
+    */
+}

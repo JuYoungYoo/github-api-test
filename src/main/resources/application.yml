@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    platform: H2
+    hikari:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:~/testDB
+      username: sa
+      password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      path: /h2-console
+      enabled: true
+      settings:
+        web-allow-others: true
+
+#OAuth2 App Configuration
+#  OAuth2AppClientId=
+#  OAuth2AppClientSecret=
+#  OAuth2AppRedirectUri=http://localhost:8080/oauth2redirect
+
+  #QBO API endpoint for sandbox
+#  IntuitAccountingAPIHost=https://sandbox-quickbooks.api.intuit.com
+
+  #Discovery API endpoint for sandbox
+#  DiscoveryAPIHost=https://developer.api.intuit.com/.well-known/openid_sandbox_configuration/
+
+#  c2qbScope=com.intuit.quickbooks.accounting
+#  siwiScope=openid profile email phone address
+#  getAppNowScope=o
+#  penid profile email phone address com.intuit.quickbooks.accounting
+
+#  security:
+#    oauth2:
+#      client:
+#        provider:
+
+
+
